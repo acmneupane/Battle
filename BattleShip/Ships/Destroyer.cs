@@ -11,9 +11,9 @@ namespace BattleShip.Ships
 
         public Destroyer()
         {
-            name = "Destroyer";
-            width = 3;
-            type = Type.Destroyer;
+            Name = "Destroyer";
+            Width = 3;
+            Type = Type.Destroyer;
         }
 
     }

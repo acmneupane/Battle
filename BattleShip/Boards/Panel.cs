@@ -9,31 +9,34 @@ namespace BattleShip
     public class Panel
     {
 
-        public Coordinate coordinates { get; set; }
+        public Coordinate Coordinates { get; set; }
 
-        public Type type { get; set; }
+        public Type Type { get; set; }
 
         public Panel(int row, int column)
         {
-            coordinates = new Coordinate(row, column);
-            type = Type.Empty;
+            Coordinates = new Coordinate(row, column);
+            Type = Type.Empty;
         }
 
-        public bool isShipOccupied
+        public bool IsShipOccupied
         {
             get
             {
-                return type == Type.Cruise ||
-                       type == Type.Destroyer ||
-                       type == Type.Fightership ||
-                       type == Type.Submarine;
+                return Type == Type.Cruise ||
+                       Type == Type.Destroyer ||
+                       Type == Type.Fightership ||
+                       Type == Type.Submarine;
 
             }
         }
 
-        public string Status()
+        public string Status
         {
-            return type.ToString();
+            get
+            {
+                return Type.ToString();
+            }
         }
 
     }

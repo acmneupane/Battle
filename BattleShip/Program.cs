@@ -10,9 +10,7 @@ namespace BattleShip
     {
         static void Main(string[] args)
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Welcome to the Battleship Game");
 
             Game game = new Game();
             game.KeepOnPlaying();

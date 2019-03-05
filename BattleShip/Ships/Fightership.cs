@@ -11,9 +11,9 @@ namespace BattleShip.Ships
 
         public FighterShip()
         {
-            name = "Fightership";
-            width = 2;
-            type = Type.Fightership;
+            Name = "Fightership";
+            Width = 2;
+            Type = Type.Fightership;
         }
 
     }

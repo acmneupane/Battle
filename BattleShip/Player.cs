@@ -10,22 +10,22 @@ namespace BattleShip
     public class Player
     {
 
-        public String name { get; set; }
+        public String Name { get; set; }
         public Board Board { get; set; }
-        public List<Ship> ships { get; set; }
+        public List<Ship> Ships { get; set; }
         public bool hasLost
         {
             get
             {
-                return ships.All(x => x.isSunk);
+                return Ships.All(x => x.IsSunk);
             }
         }
 
         public Player(String name)
         {
-            this.name = name;
+            this.Name = name;
             Board = new Board();
-            ships = new List<Ship>()
+            Ships = new List<Ship>()
             {
                 new Submarine(),
                 new Cruise(),
@@ -36,9 +36,10 @@ namespace BattleShip
 
         public void PlaceShips()
         {
-            foreach (var ship in ships)
+            foreach (var ship in Ships)
             {
-                var isPlaced = false; //to check if the ship is placed or not
+                //to check if the ship is placed or not
+                var isPlaced = false; 
                 while (!isPlaced)
                 {
                     //print the ship name ask player to enter coordinates to start placing ship
@@ -54,12 +55,12 @@ namespace BattleShip
 
                     if (orientation == 0)
                     {
-                        for (int i = 1; i < ship.width; i++)
+                        for (int i = 1; i < ship.Width; i++)
                             endRow++;
                     }
                     else
                     {
-                        for (int i = 1; i < ship.width; i++)
+                        for (int i = 1; i < ship.Width; i++)
                             endColumn++;
                     }
 
@@ -68,16 +69,17 @@ namespace BattleShip
                     {
                         isPlaced = false;
                         //print the ships are outside the boundaries and again ask for new coordinates
-                        continue; //restart the while loop
+                        continue;
+                        //restart the while loop
                     }
 
                     //check if any panels is occupied by any other ship
-                    var newPanels = Board.panels.Where(x => x.coordinates.row >= startRow
-                                    && x.coordinates.column >= startColumn
-                                    && x.coordinates.row <= endRow
-                                    && x.coordinates.column <= endColumn).ToList();
+                    var newPanels = Board.Panels.Where(x => x.Coordinates.Row >= startRow
+                                    && x.Coordinates.Column >= startColumn
+                                    && x.Coordinates.Row <= endRow
+                                    && x.Coordinates.Column <= endColumn).ToList();
 
-                    var occupied = newPanels.Any(x => x.isShipOccupied);
+                    var occupied = newPanels.Any(x => x.IsShipOccupied);
 
                     if(occupied)
                     {
@@ -87,7 +89,7 @@ namespace BattleShip
 
                     foreach(var panel in newPanels)
                     {
-                        panel.type = ship.type;
+                        panel.Type = ship.Type;
                     }
 
                     isPlaced = true;
@@ -109,25 +111,25 @@ namespace BattleShip
 
         public void ProcessAttack(Coordinate coord)
         {
-            var panel = Board.panels.FirstOrDefault(x => x.coordinates.row == coord.row && x.coordinates.column == coord.column);
+            var panel = Board.Panels.FirstOrDefault(x => x.Coordinates.Row == coord.Row && x.Coordinates.Column == coord.Column);
 
             //if panel is not occupied, call it a miss
-            if(!panel.isShipOccupied)
+            if(!panel.IsShipOccupied)
             {
                 //print Miss
-                panel.type = Type.Miss;
+                panel.Type = Type.Miss;
             }
             else
             {
                 //print Hit
 
                 //panel occupied, get the ship that is in the panel
-                var ship = ships.FirstOrDefault(x => x.type == panel.type);
+                var ship = Ships.FirstOrDefault(x => x.Type == panel.Type);
 
-                ship.hits++; //increment hits counter for ship
+                ship.Hits++; //increment hits counter for ship
 
                 //check if the ship is sunk
-                if (ship.isSunk)
+                if (ship.IsSunk)
                 {
                     //Print The Ship is sunk
                 }

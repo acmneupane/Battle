@@ -11,9 +11,9 @@ namespace BattleShip.Ships
 
         public Cruise()
         {
-            name = "Cruise";
-            width = 5;
-            type = Type.Cruise;
+            Name = "Cruise";
+            Width = 5;
+            Type = Type.Cruise;
         }
 
     }
