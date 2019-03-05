@@ -1,0 +1,7 @@
+C:\Users\BUNNY\source\repos\BattleShip\BattleShip\bin\Debug\BattleShip.exe.config
+C:\Users\BUNNY\source\repos\BattleShip\BattleShip\bin\Debug\BattleShip.exe
+C:\Users\BUNNY\source\repos\BattleShip\BattleShip\bin\Debug\BattleShip.pdb
+C:\Users\BUNNY\source\repos\BattleShip\BattleShip\obj\Debug\BattleShip.csprojAssemblyReference.cache
+C:\Users\BUNNY\source\repos\BattleShip\BattleShip\obj\Debug\BattleShip.csproj.CoreCompileInputs.cache
+C:\Users\BUNNY\source\repos\BattleShip\BattleShip\obj\Debug\BattleShip.exe
+C:\Users\BUNNY\source\repos\BattleShip\BattleShip\obj\Debug\BattleShip.pdb
