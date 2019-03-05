@@ -1,0 +1,5 @@
+Some assumptions had been made while developing this application:
+- The players enter the coordinates of the ship to be placed in the board.
+- Players attack by entering coordinates of the other player's board
+- UI implementation is not required
+- The number of ships, their width and names don't need to be changed
