@@ -19,12 +19,16 @@ namespace BattleShip
             type = Type.Empty;
         }
 
-        public bool IsShipOccupied()
+        public bool isShipOccupied
         {
-            return type == Type.Cruise || 
-                   type == Type.Destroyer || 
-                   type == Type.Fightership || 
-                   type == Type.Submarine;
+            get
+            {
+                return type == Type.Cruise ||
+                       type == Type.Destroyer ||
+                       type == Type.Fightership ||
+                       type == Type.Submarine;
+
+            }
         }
 
         public string Status()

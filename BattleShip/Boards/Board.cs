@@ -14,11 +14,13 @@ namespace BattleShip
 
         public Board()
         {
+            panels = new List<Panel>();
             for(int i = 1; i <= SIZE; i++)
             {
                 for(int j = 1; j <= SIZE; j++)
                 {
-                    panels.Add(new Panel(i, j));
+                    var newth = new Panel(i, j);
+                    panels.Add(newth);
                 }
 
             }

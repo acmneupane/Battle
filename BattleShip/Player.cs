@@ -77,7 +77,7 @@ namespace BattleShip
                                     && x.coordinates.row <= endRow
                                     && x.coordinates.column <= endColumn).ToList();
 
-                    var occupied = newPanels.Any(x => !x.IsShipOccupied());
+                    var occupied = newPanels.Any(x => x.isShipOccupied);
 
                     if(occupied)
                     {
@@ -112,22 +112,26 @@ namespace BattleShip
             var panel = Board.panels.FirstOrDefault(x => x.coordinates.row == coord.row && x.coordinates.column == coord.column);
 
             //if panel is not occupied, call it a miss
-            if(!panel.IsShipOccupied())
+            if(!panel.isShipOccupied)
             {
                 //print Miss
                 panel.type = Type.Miss;
             }
-
-            //print Hit
-            //panel occupied, get the ship that is in the panel
-            var ship = ships.FirstOrDefault(x => x.type == panel.type);
-
-            ship.hits++; //increment hits counter for ship
-
-            //check if the ship is sunk
-            if(ship.isSunk)
+            else
             {
-                //Print The Ship is sunk
+                //print Hit
+
+                //panel occupied, get the ship that is in the panel
+                var ship = ships.FirstOrDefault(x => x.type == panel.type);
+
+                ship.hits++; //increment hits counter for ship
+
+                //check if the ship is sunk
+                if (ship.isSunk)
+                {
+                    //Print The Ship is sunk
+                }
+
             }
 
         }
